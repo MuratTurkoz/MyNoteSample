@@ -1,0 +1,54 @@
+﻿@model MyNoteSample.Entities.Category
+
+@{
+    ViewBag.Title = "Create";
+}
+<link href="~/Content/login-register.css" rel="stylesheet" />
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <div class="col-md-10 mt-4">
+                    <h2>Kategori Ekle</h2>
+                    <hr />
+                    @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                </div>
+
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        @MyBootstrap.LinkButton("/Category/Index", "outline-secondary", string.Empty, string.Empty, string.Empty, "chevron-left", "Geri Dön")
+                        @MyBootstrap.Button("submit", "outline-primary", "Oluştur", "plus-circle", string.Empty, "mr-1")
+
+                        @*<button type="submit" class="btn btn-outline-primary">
+                                <i class="fa fa-plus-circle mr-1"></i>Oluştur
+                            </button>*@
+                        @*<a href="/Category/Index" class="btn btn-outline-secondary text-decoration-none">
+                                <i class="fas fa-chevron-left"></i>Geri Dön
+                            </a>*@
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+

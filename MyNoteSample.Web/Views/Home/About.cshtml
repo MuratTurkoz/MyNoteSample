@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "About";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            @Html.Action("GetCategoriesPartial", "Home")
+        </div>
+        <!-- /.col-lg-3 -->
+
+        <div class="col-lg-9">
+            <div class="row mt-3">
+                <h2>Sapien elit in malesuada semper mi, id sollicitudin urna fermentum.</h2>
+                <img src="http://placehold.it/600x300" alt="" class="mx-auto d-block img-fluid rounded img-thumbnail" />
+                <p>Scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel placerat suscipit, orci nisl iaculis eros, a tincidunt nisi odio eget lorem nulla condimentum tempor mattis ut vitae feugiat augue.</p>
+                <p>Cras ut metus a risus iaculis scelerisque eu ac ante fusce non varius purus aenean nec magna felis fusce vestibulum velit mollis odio sollicitudin lacinia aliquam posuere, sapien elementum lobortis tincidunt, turpis dui ornare nisl, sollicitudin interdum turpis nunc eget.</p>
+                <p>Sem nulla eu ultricies orci praesent id augue nec lorem pretium congue sit amet ac nunc fusce iaculis lorem eu diam hendrerit at mattis purus dignissim vivamus mauris tellus, fringilla vel dapibus a, blandit quis erat vivamus elementum aliquam luctus.</p>
+                <p>Etiam fringilla pretium sem vitae sodales mauris id nulla est praesent laoreet, metus vel auctor aliquam, eros purus vulputate leo, eget consequat neque quam id tellus duis ultricies tempor tortor, vitae dignissim ligula mattis nec in hac habitasse platea dictumst.</p>
+                <p>Ut arcu enim, dictum quis ultrices id, sagittis eget nulla sed nunc mi, congue ut ultricies ac, varius a eros donec porttitor, libero fermentum fringilla laoreet, eros arcu sodales ante, ut dictum risus lectus vel quam integer ultricies, nunc eget.</p>
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.col-lg-9 -->
+</div>
+<!-- /.row -->
+@section footer{
+    @Html.Partial("_PartialFooter")
+}

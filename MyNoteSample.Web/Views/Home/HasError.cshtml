@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "HasError";
+}
+@{
+
+    Exception ex = null;
+    if (TempData["LastError"] != null)
+    {
+        ex = TempData["LastError"] as Exception;
+    }
+}
+<div class="row">
+    <div class="col-md-8 offset-2">
+        <div class="jumbotron">
+            <h1 class="display-4 text-danger">Hata oluştu...</h1>
+            <p class="lead"><i class="fas fa-bug fa-5x"></i>İşlem yapılırken hata oluştu.</p>
+            <hr class="my-4">
+            @if (ex != null)
+            {
+                <strong>Hata Detay:</strong>
+                <p class="text-center">@ex.Message</p>
+            }
+            <p>Lütfen tekrar deneyin.</p>
+            @MyBootstrap.LinkButton("/Home/Index", "default", "", "","", "home", "Anasayfaya git")
+            @MyBootstrap.LinkButton("mailto:trkz.murat@gmail.com", "primary","", "", "", "envelope", "E-Posta Gönder")
+
+        </div>
+    </div>
+</div>
+

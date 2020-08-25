@@ -1,0 +1,116 @@
+﻿@using MyNoteSample.Entities.ValueObject
+@model RegisterModel
+@{
+    ViewBag.Title = "Register";
+}
+<link href="~/Content/login-register.css" rel="stylesheet" />
+@using (Html.BeginForm())
+{
+    <div class="container d-flex flex-column mt-3 pt-3 ">
+        <div class="row align-items-center justify-content-center mt-3 pt-3">
+            <div class="col-md-4 py-6 py-md-0">
+                <div>
+                    <div class="text-center">
+                        <h3>Register</h3>
+                        <p class="small text-muted">
+                            Sign in to your account to continue.
+                        </p>
+                    </div>
+                    <div class="clearfix"></div>
+
+                    @Html.ValidationSummary(false)
+
+                    <div class="input-group mb-3">
+
+                        <div class="input-group-prepend">
+
+                            <span class="input-group-text" id="Usernameaddon"><i class="fa fa-user-astronaut"></i></span>
+                        </div>
+                        @Html.TextBoxFor(x => x.Username, new
+                   {
+                       @class = "form-control",
+                       id = "inlineFormInputGroupUsername",
+                       placeholder = "Username",
+                       aria_label = "Username",
+                       aria_describedby = "Usernameaddon"
+                   })
+
+                    </div>
+                    @Html.ValidationMessageFor(x => x.Username, "", new { @class = "ml-auto text-danger" })
+                    <div class="form-group">
+                        <label class="text-muted form-control-label" for="GroupUsername">E-mail:</label>
+                        <label class="sr-only" for="GroupUsername">E-mail</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fab fa-telegram-plane danger "></i>
+                                </div>
+
+                            </div>
+                            @Html.TextBoxFor(x => x.Email, new { @class = "form-control", id = "GroupUsername", placeholder = "E-mail" })
+                            @*<input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Username">*@
+                        </div>
+                        @Html.ValidationMessageFor(x => x.Email, "", new { @class = "ml-auto text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label class="text-muted form-control-label" for="GroupPassword">Password:</label>
+                        <label class="sr-only" for="GroupPassword">Password</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="fa fa-key"></i>
+                                </div>
+                            </div>
+                            @Html.TextBoxFor(x => x.Password, new { @class = "form-control", id = "GroupPassword", placeholder = "Password", type = "Password" })
+
+                        </div>
+                        @Html.ValidationMessageFor(x => x.Password, "", new { @class = "ml-auto text-danger" })
+                        <div class="form-group">
+                            <label class="text-muted form-control-label" for="GroupRePassword">Şifre Tekrar:</label>
+                            <label class="sr-only" for="GroupRePassword">Şifre Tekrar</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-key"></i>
+                                    </div>
+                                </div>
+                                @Html.TextBoxFor(x => x.RePassword, new { @class = "form-control", id = "GroupRePassword", placeholder = "Password tekrar giriniz", type = "Password" })
+
+                            </div>
+                            @Html.ValidationMessageFor(x => x.RePassword, "", new { @class = "ml-auto text-danger" })
+                            <div class="mt-4">
+                                <button type="submit" class="btn btn-block btn-primary">Kayıt Ol</button>
+                            </div>
+                            @*}*@
+                            @*<div class="py-3 text-center">
+                                    <span class="text-xs text-uppercase">or</span>
+                                </div>*@
+
+                            <div class="mt-1 text-right">
+                                <small>Not registered?</small>
+                                <a href="/Home/Login" class="small font-weight-bold">
+                                    Are you a member?
+                                </a>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+
+@*<script>
+        $(function () {
+            $("footer").parent().hide();
+        });
+    </script>*@

@@ -1,0 +1,52 @@
+﻿@using MyNoteSample.Web.Models.ViewModels.NotifyViewModels
+@model WarningViewModel
+@{
+    ViewBag.Title = Model.Title;
+}
+<div class="container d-flex flex-column">
+    <div class="row align-items-center justify-content-center min-vh-100">
+        <div class="col-md-6 py-6 py-md-0">
+            <div>
+                <div class="text-center text-warning">
+                    <i class="far  fas fa-route fa-5x"></i>
+                    <h2 class="fa-2x">@Model.Header</h2>
+                </div>
+                <br />
+                <br />
+                <br />
+
+                <div class="clearfix"></div>
+                <div class="text-warning mt-5">
+
+                    <h2><i class="fas fa-remove-format"></i> @Model.Title</h2>
+                    <hr />
+                    <p class="text-justify">
+
+                        @foreach (string error in Model.Items)
+                        {
+                            @error
+                            <br>
+                        }
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+@{
+    string js = string.Empty;
+    if (Model.IsRedirecting)
+    {
+        js = "setTimeout(function () { window.location = '" + Model.RedirectingUrl + "'; }," + Model.RedirectingTimeOut + ");";
+    }
+}
+<script>
+    $(function () {
+     
+        @Html.Raw(js);
+    });
+</script>
+
+
+

@@ -1,0 +1,52 @@
+﻿ <!-- Footer -->
+<footer class="py-5 bg-dark shadow">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-4 text-center text-white">
+                <h5 class="text-center ">Site Ağaçı</h5>
+                <ul class="text-center text-white list-group list-group-flush">
+                    <li class="list-group-item bg-dark">
+                        <a class="text-white text-decoration-none" href="/Home/">
+                            <i class="fa fa-wrench"> </i>
+                            Yönetim Paneli
+                        </a>
+                    </li>
+                    <li class="list-group-item bg-dark">
+                        <a class="text-white text-decoration-none" href="@Url.Action("MostLiked", "Home")">
+                            <i class="fa fa-heart"> </i>
+                            En Beğenilenler
+                        </a>
+                    </li>
+                    <li class="list-group-item bg-dark">
+                        <a class="text-white text-decoration-none" href="@Url.Action("LastNotes", "Home")">
+                            <i class="fa fa-list-ul"> </i>
+                            Son Yazılanlar
+                        </a>
+                    </li>
+                    <li class="list-group-item bg-dark">
+                        <a class="text-white text-decoration-none" href="@Url.Action("About", "Home")">
+                            <i class="fa fa-info-circle"> </i>
+                            Hakkımızda
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4 text-white d-flex align-items-center ">
+                <p class="m-0 text-center ">Tüm hakları Saklıdır.  &copy; @DateTime.Now.Year</p>
+            </div>
+            <div class="col-md-4 text-white">
+                <h5>Üyelik</h5>
+                <hr class="text-white border-white" />
+                <form class="form-inline">
+                    <div class="form-group mx-2 mb-2">
+                        <label for="inputPassword2" class="sr-only">e-posta giriniz.</label>
+                        <input type="email" class="form-control" id="inputPassword2" placeholder="e-posta giriniz.">
+                    </div>
+                    <button type="submit" class="btn btn-outline-light mb-2">Gönder<i class="fa fa-send-o mx-1"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</footer>

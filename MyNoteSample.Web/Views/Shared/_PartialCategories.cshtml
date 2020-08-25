@@ -1,0 +1,10 @@
+﻿
+@model List<MyNoteSample.Entities.Category>
+<h1 class="my-4">Kategoriler</h1>
+<div class="list-group ">
+    <a href="/Home/Index" class="btn btn-outline-dark text-decoration-none text-left border border-bottom-0"><i class="fa fa-angle-double-right mx-1"></i>Tümü</a>
+    @foreach (MyNoteSample.Entities.Category item in Model)
+    {
+        <a href="@Url.Action("ByCategory","Home",new {Id=item.Id})" title="@item.Description" class="btn btn-outline-dark text-decoration-none text-left border border-bottom-0"><i class="fa fa-angle-double-right mx-1"></i>@item.Title</a>
+    }
+</div>

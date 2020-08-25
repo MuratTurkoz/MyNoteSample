@@ -1,0 +1,28 @@
+﻿@using MyNoteSample.Entities
+@model NoteUser
+@{
+    ViewBag.Title = "ShowProfile";
+}
+<div class="container">
+    <div class="row">
+        <h2>@ViewBag.Title</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <img src="~/img/@Model.ProfileImageFilename" class="img-thumbnail rounded-circle rounded-sm" alt="" />
+        </div>
+        <div class="col-md-10">
+            <h3>@(Model.Name+" "+Model.SurName)</h3>
+            <br>
+            <h5>@Html.DisplayNameFor(z => z.Name):  @Model.UserName</h5>
+            <br>
+            <h5>@Html.DisplayNameFor(z => z.Email):  @Model.Email</h5>
+        </div>
+    </div>
+</div>
+@*<script>
+        $(function () {
+            $("footer").hide();
+        });
+    </script>*@
+

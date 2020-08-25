@@ -1,0 +1,19 @@
+﻿@using MyNoteSample.Entities
+@model Note
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12"><h3>@Model.Title</h3></div>
+        <div class="col-md-12"><hr /></div>
+        <div class="col-md-12 d-inline-flex d-flex">
+
+            <p class="text-justify">@Model.Text</p>
+
+        </div>
+        <div class="col-md-12"><hr /></div>
+        <div class="col-md-12 d-inline-flex d-flex">
+            <div class="col-md-4">   <i class="fa fa-user"></i>@Model.NoteUser.UserName</div>
+            <div class="col-md-8">  <i class="fa fa-calendar-times"></i>@Model.ModifiedOn</div>
+        </div>
+    </div>
+</div>
+

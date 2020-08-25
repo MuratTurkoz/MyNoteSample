@@ -1,0 +1,53 @@
+﻿@model IEnumerable<MyNoteSample.Entities.Category>
+
+@{
+    ViewBag.Title = "Kategoriler";
+}
+<div class="row">
+    <div class="col-md-10 col-12 offset-md-1">
+        <h2>Kategoriler</h2>
+
+        <p>
+            <a href="/Category/Create" class="btn btn-outline-primary">
+                <i class="fa fa-plus-circle mr-1"></i>
+                Oluştur
+            </a>
+        </p>
+        <div class="table-responsive-md">
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Title)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Description)
+                    </th>
+                    <th>
+                        Görüntüle/Düzenle/Sil
+                    </th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td class="d-inline-flex">
+                            @MyBootstrap.LinkButton("/Category/Edit/" + item.Id, "outline-success", string.Empty, "btn-sm", "Düzenle", "edit", string.Empty)
+                            @MyBootstrap.LinkButton("/Category/Details/" + item.Id, "outline-warning", string.Empty, "btn-sm", "Detay", "info-circle", string.Empty)
+                            @MyBootstrap.LinkButton("/Category/Delete/" + item.Id, "outline-danger", string.Empty, "btn-sm", "Sil", "trash-restore", string.Empty)
+                            
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+
+    </div>
+</div>
+
